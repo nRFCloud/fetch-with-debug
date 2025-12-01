@@ -7,7 +7,7 @@ Simple wrapper around fetch that logs request and response.
 ## Install with NPM
 
 ```bash
-npx jsr add --save-dev @nrfcloud/fetch-with-debug
+npx jsr add (--save-prod|--save-dev) @nrfcloud/fetch-with-debug
 ```
 
 ## Usage
