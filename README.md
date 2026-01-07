@@ -13,7 +13,7 @@ npx jsr add (--save-prod|--save-dev) @nrfcloud/fetch-with-debug
 ## Usage
 
 ```typescript
-import { fetchWithDebug } from "@bifravst/fetch-with-debug";
+import { fetchWithDebug } from "@nrfcloud/fetch-with-debug";
 
 const fetch = fetchWithDebug(
   (type, details) => console.log("[My Service]", type, JSON.stringify(details)),
