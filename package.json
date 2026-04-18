@@ -20,7 +20,7 @@
   "devDependencies": {
     "@bifravst/prettier-config": "1.1.17",
     "nock": "14.0.12",
-    "prettier": "3.8.2"
+    "prettier": "3.8.3"
   },
   "prettier": "@bifravst/prettier-config",
   "release": {
