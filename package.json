@@ -19,7 +19,7 @@
   "main": "export.ts",
   "devDependencies": {
     "@bifravst/prettier-config": "1.1.17",
-    "nock": "14.0.13",
+    "nock": "14.0.14",
     "prettier": "3.8.3"
   },
   "prettier": "@bifravst/prettier-config",
