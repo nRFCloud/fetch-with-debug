@@ -7,7 +7,7 @@
       "semanticCommitType": "fix"
     },
     {
-      "matchPackagePatterns": ["@nrfcloud/*"],
+      "matchPackageNames": ["@nrfcloud/**"],
       "minimumReleaseAge": null
     }
   ]
