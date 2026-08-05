@@ -18,6 +18,9 @@
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
-    "allowImportingTsExtensions": true
-  }
+    "allowImportingTsExtensions": true,
+    "types": ["node"]
+  },
+  "exclude": ["npm/**/*"],
+  "include": ["./**/*.ts", "./.npm/*.ts"]
 }

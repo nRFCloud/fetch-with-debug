@@ -1,13 +1,13 @@
 # `@nrfcloud/fetch-with-debug`
 
-<https://jsr.io/@nrfcloud/fetch-with-debug>
+<https://www.npmjs.com/package/@nrfcloud/fetch-with-debug>
 
 Simple wrapper around fetch that logs request and response.
 
 ## Install with NPM
 
 ```bash
-npx jsr add (--save-prod|--save-dev) @nrfcloud/fetch-with-debug
+npm i (--save-prod|--save-dev) @nrfcloud/fetch-with-debug
 ```
 
 ## Usage
