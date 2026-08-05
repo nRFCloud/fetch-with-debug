@@ -14,11 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const outDir = path.join(__dirname, '..', 'npm')
 
-try {
-	rmSync(outDir, { recursive: true, force: true })
-} catch {
-	// pass
-}
+rmSync(outDir, { recursive: true, force: true })
 
 for await (const file of glob(
 	tsconfig.include.map((include) => path.join('.npm', include)),
