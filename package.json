@@ -2,13 +2,13 @@
   "name": "@nrfcloud/fetch-with-debug",
   "version": "0.0.0-development",
   "description": "Simple wrapper around fetch that logs request and response.",
-  "homepage": "https://github.com/nrfcloud/fetch-with-debug#readme",
+  "homepage": "https://github.com/nRFCloud/fetch-with-debug#readme",
   "bugs": {
-    "url": "https://github.com/nrfcloud/fetch-with-debug/issues"
+    "url": "https://github.com/nRFCloud/fetch-with-debug/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nrfcloud/fetch-with-debug.git"
+    "url": "git+https://github.com/nRFCloud/fetch-with-debug.git"
   },
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "scripts": {
