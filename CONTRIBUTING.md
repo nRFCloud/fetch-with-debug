@@ -1,8 +1,8 @@
 # Contributing to `@nrfcloud/fetch-with-debug`
 
 Thanks for contributing! This is a published library; new versions are released
-to [JSR](https://jsr.io/@nrfcloud/fetch-with-debug) automatically on merge to
-`main`.
+to [NPM](https://www.npmjs.com/package/@nrfcloud/fetch-with-debug) automatically
+on merge to `main`.
 
 ## Development setup
 
@@ -15,8 +15,22 @@ to [JSR](https://jsr.io/@nrfcloud/fetch-with-debug) automatically on merge to
 
 ## Testing
 
-Run `npm test` for the unit tests. They run the `*.spec.ts` files directly with
-the Node.js built-in test runner.
+1. Run `npx tsc` to type-check the project.
+1. Run `npm test` for the unit tests. They run the `*.spec.ts` files directly
+   with the Node.js built-in test runner.
+
+## Building the NPM package
+
+The package is published as compiled JavaScript with type declarations in the
+`npm/` folder, which is created by the `prepublishOnly` hook:
+
+1. [`.npm/compile.ts`](.npm/compile.ts) transpiles the TypeScript sources using
+   [`@swc/core`](https://www.npmjs.com/package/@swc/core) and rewrites the `.ts`
+   import specifiers to `.js`.
+1. [TypeScript 7](https://www.npmjs.com/package/typescript) emits the type
+   declarations, using [`.npm/tsconfig.npm.json`](.npm/tsconfig.npm.json).
+
+Run `npm run prepublishOnly` to build it locally.
 
 ## Releasing a new version
 
@@ -29,7 +43,7 @@ the Node.js built-in test runner.
 1. Once approved and CI passes, rebase or squash away!
 1. [`semantic-release` in the Test&Release workflow](.github/workflows/test-and-release.yaml)
    takes care of creating a new GitHub release and publishing the package to
-   [JSR](https://jsr.io/@nrfcloud/fetch-with-debug).
+   [NPM](https://www.npmjs.com/package/@nrfcloud/fetch-with-debug).
 
 Once the new version is published, consumers can bump their dependency on
 `@nrfcloud/fetch-with-debug` to pick it up.

@@ -12,14 +12,32 @@
   },
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "scripts": {
-    "test": "node --no-warnings --experimental-transform-types --test \"./*.spec.ts\"",
-    "prepare": "case \"$npm_command\" in install|ci) check-node-version --package ;; esac"
+    "test": "node --no-warnings --experimental-transform-types --test \"./*.spec.ts\" \"./.npm/*.spec.ts\"",
+    "prepare": "case \"$npm_command\" in install|ci) check-node-version --package ;; esac",
+    "prepublishOnly": "node --experimental-strip-types ./.npm/compile.ts && npx tsc -P ./.npm/tsconfig.npm.json --outDir ./npm"
   },
   "license": "BSD-3-Clause",
   "type": "module",
-  "main": "export.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./npm/export.d.ts",
+        "default": "./npm/export.js"
+      }
+    }
+  },
+  "files": [
+    "npm",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@bifravst/prettier-config": "1.1.17",
+    "@swc/core": "1.15.47",
+    "@types/node": "25.9.5",
+    "@typescript/native": "npm:typescript@7.0.2",
     "check-node-version": "4.2.1",
     "nock": "14.0.17",
     "prettier": "3.9.6"
@@ -33,7 +51,14 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@sebbo2002/semantic-release-jsr"
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "successCommentCondition": false,
+          "failCommentCondition": false
+        }
+      ]
     ]
   },
   "engines": {
