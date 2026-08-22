@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@bifravst/prettier-config": "2.0.0",
-    "@swc/core": "1.16.0",
+    "@swc/core": "1.16.1",
     "@types/node": "25.9.5",
     "@typescript/native": "npm:typescript@7.0.2",
     "check-node-version": "4.2.1",
