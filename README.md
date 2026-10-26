@@ -1,10 +1,24 @@
 # `@nrfcloud/fetch-with-debug`
 
-<https://www.npmjs.com/package/@nrfcloud/fetch-with-debug>
+<https://github.com/nRFCloud/fetch-with-debug/pkgs/npm/fetch-with-debug>
 
 Simple wrapper around fetch that logs request and response.
 
-## Install with NPM
+## Installation
+
+The package is published to the
+[GitHub Packages registry](https://github.com/nRFCloud/fetch-with-debug/pkgs/npm/fetch-with-debug).
+Releases are also published to
+[npm](https://www.npmjs.com/package/@nrfcloud/fetch-with-debug).
+
+To install it, point the `@nrfcloud` scope to it in your project's `.npmrc` and
+[authenticate](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)
+with a token that has the `read:packages` scope:
+
+```
+@nrfcloud:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
 
 ```bash
 npm i (--save-prod|--save-dev) @nrfcloud/fetch-with-debug
