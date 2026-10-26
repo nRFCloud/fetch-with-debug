@@ -7,7 +7,9 @@ env:
 
 permissions:
   contents: write
+  packages: write
   issues: write
+  # Needed for trusted publishing to npm
   id-token: write
 
 jobs:
@@ -35,4 +37,22 @@ jobs:
       - run: npm test
 
       - name: Semantic release
+        id: semantic-release
         run: npx semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Also publish to npm, alongside GitHub Packages
+      # Must also run if semantic-release failed after @semantic-release/npm
+      # bumped the version (e.g. in @semantic-release/github), because the
+      # tag is already pushed and the release will not be retried.
+      - name: Publish to npm
+        if: ${{ !cancelled() && steps.semantic-release.outcome != 'skipped' }}
+        run: |
+          version="$(node -p 'require("./package.json").version')"
+          if [ "$version" = "0.0.0-development" ]; then
+            echo "No new release, skipping."
+            exit 0
+          fi
+          # The scope registry in .npmrc overrides --registry, so override the scope
+          npm publish --@nrfcloud:registry=https://registry.npmjs.org
