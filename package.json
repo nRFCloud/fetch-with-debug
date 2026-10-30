@@ -12,7 +12,7 @@
   },
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "scripts": {
-    "test": "node --no-warnings --experimental-transform-types --test \"./*.spec.ts\" \"./.npm/*.spec.ts\"",
+    "test": "node --no-warnings --test \"./*.spec.ts\" \"./.npm/*.spec.ts\"",
     "prepare": "case \"$npm_command\" in install|ci) check-node-version --package ;; esac",
     "prepublishOnly": "node --experimental-strip-types ./.npm/compile.ts && npx tsc -P ./.npm/tsconfig.npm.json --outDir ./npm"
   },
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@bifravst/prettier-config": "2.0.4",
     "@swc/core": "1.16.20",
-    "@types/node": "25.9.9",
+    "@types/node": "26.6.5",
     "@typescript/native": "npm:typescript@7.0.2",
     "check-node-version": "4.2.1",
     "nock": "15.0.5",
