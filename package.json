@@ -40,7 +40,7 @@
     "@types/node": "26.6.6",
     "@typescript/native": "npm:typescript@7.0.2",
     "check-node-version": "4.2.1",
-    "nock": "15.0.5",
+    "nock": "15.0.6",
     "prettier": "3.9.10"
   },
   "prettier": "@bifravst/prettier-config",
